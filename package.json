@@ -1,13 +1,15 @@
 {
   "name": "gemotry",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "prepublish": "tsc"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/jest": "^25.1.4",
     "jest": "^25.1.0",
@@ -16,5 +18,8 @@
   },
   "dependencies": {
     "@types/node": "^13.9.2"
-  }
+  },
+  "files": [
+    "dist/"
+  ]
 }
