@@ -1,4 +1,4 @@
-import { CommonMatrix, Matrix, SquareMatrix } from "../../../internal";
+import { CommonMatrix, Matrix, SquareMatrix, SupportedDataArray, SupportedDataArrayConstructor } from "../../../internal";
 
 export default class Matrix22 extends CommonMatrix {
 

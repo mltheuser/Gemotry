@@ -1,6 +1,7 @@
 import { Vector } from "../../../src/internal";
 
 
+
 test('Should create basic row major 1x3 vector', () => {
     const v = new Vector(1, 3, [1, 2, 3]);
     expect(v.rows()).toBe(1);

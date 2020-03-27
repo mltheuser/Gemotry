@@ -1,4 +1,4 @@
-import { Matrix, Matrix33, degToRadians, Matrix22 } from "../../../internal";
+import { Matrix, Matrix33, degToRadians, Matrix22, SupportedDataArrayInternal } from "../../../internal";
 import CommonVector from "./CommonVector";
 
 export default class Vector2 extends CommonVector {

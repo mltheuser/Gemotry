@@ -1,4 +1,5 @@
-import { Matrix, Vector } from '../../src/internal';
+import { Matrix, Vector } from "../../src/internal";
+
 
 test('Constructor should work for basic 2x2 Matrix', () => {
     const matrix = new Matrix(2, 2, [1, 2, 3, 4]);

@@ -1,4 +1,4 @@
-import { Vector, Matrix, Matrix33, degToRadians } from "../../../internal";
+import { Vector, Matrix, Matrix33, degToRadians, SupportedDataArrayConstructor, SupportedDataArrayInternal } from "../../../internal";
 import CommonVector from "./CommonVector";
 import Matrix44 from "../../SquareMatricies/CommonMatricies/Matrix44";
 

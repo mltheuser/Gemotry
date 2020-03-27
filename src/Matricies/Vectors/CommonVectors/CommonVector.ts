@@ -1,4 +1,4 @@
-import { Vector, Matrix, SquareMatrix, CommonMatrix } from "../../../internal";
+import { Vector, CommonMatrix } from "../../../internal";
 
 export default abstract class CommonVector extends Vector {
 

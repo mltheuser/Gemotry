@@ -1,4 +1,4 @@
-import { Vector, SquareMatrix } from "../internal";
+import { Vector, SquareMatrix, SupportedDataArrayConstructor, SupportedDataArray, SupportedDataArrayInternal, SupportedSizeArrayInternal } from "../internal";
 
 export default class Matrix {
 

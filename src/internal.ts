@@ -1,3 +1,5 @@
+import { SupportedDataArrayConstructor, SupportedSizeArrayInternal, SupportedSizeArrayConstructor, SupportedDataArrayInternal, SupportedDataArray } from './Types/TypedArrays';
+
 import { degToRadians } from "./Constants";
 
 import Matrix from "./Matricies/Matrix";
@@ -14,6 +16,12 @@ import Matrix33 from "./Matricies/SquareMatricies/CommonMatricies/Matrix33";
 import Matrix44 from "./Matricies/SquareMatricies/CommonMatricies/Matrix44";
 
 export { 
+    SupportedDataArrayConstructor,
+    SupportedSizeArrayInternal, 
+    SupportedSizeArrayConstructor, 
+    SupportedDataArrayInternal, 
+    SupportedDataArray,
+
     degToRadians,
     
     Matrix, 

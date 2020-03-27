@@ -1,4 +1,4 @@
-import { Matrix, Matrix44, Matrix22, Matrix33 } from "../../internal";
+import { Matrix, Matrix44, Matrix22, Matrix33, SupportedDataArray, SupportedDataArrayConstructor } from "../../internal";
 
 export default class SquareMatrix extends Matrix {
 
