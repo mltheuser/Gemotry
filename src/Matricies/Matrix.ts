@@ -323,7 +323,7 @@ export default class Matrix {
     public matSub(matrix: Matrix, resultDataArrayType?: SupportedDataArrayConstructor) {
         return this.clone(
             this.findApplicableConnectionDataArrayType(matrix, resultDataArrayType)
-        ).matAddSelf(matrix);
+        ).matSubSelf(matrix);
     }
 
     /**

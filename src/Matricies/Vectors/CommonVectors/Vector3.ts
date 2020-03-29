@@ -45,7 +45,7 @@ export default class Vector3 extends CommonVector {
         return tData[0] * vData[0] + tData[1] * vData[1] + tData[2] * vData[2];
     }
 
-    public cross(vector: Vector3, resultDataArrayType?: SupportedDataArrayConstructor) {
+    public cross(vector: Vector3, resultDataArrayType?: SupportedDataArrayConstructor): Vector3 {
         const tData = this.data, vData = vector.data, rows = this.rows(), cols = this.cols();
         Matrix.checkEqualDimensions(rows, cols, vector.rows(), vector.cols());
         const result = new Vector3(

@@ -45,11 +45,24 @@ test("Should perform dot product correctly", () => {
 });
 
 test("Should perform cross product correctly", () => {
-    const v = new Vector3(1, 3, [1, 2, 3]);
-    const v2 = new Vector3(1, 3, [-7, 8, 9]);
-    expect(() => v.cross(v2.transpose())).toThrowError();
-    expect(v.cross(v2).toArray()).toEqual([
+    expect(() => new Vector3(1, 3, [1, 2, 3]).cross(new Vector3(1, 3, [-7, 8, 9]).transpose())).toThrowError();
+    expect(new Vector3(1, 3, [1, 2, 3]).cross(new Vector3(1, 3, [-7, 8, 9])).toArray()).toEqual([
         Float64Array.from([-6, -30, 22]),
+    ]);
+    expect(new Vector3(3, 1, [20, 30, 40]).cross(new Vector3(3, 1, [45, 70, 80])).toArray()).toEqual([
+        Float64Array.from([-400]),
+        Float64Array.from([200]),
+        Float64Array.from([50]),
+    ]);
+    expect(new Vector3(3, 1, [1, 0, 0]).cross(new Vector3(3, 1, [0, 0, 1])).toArray()).toEqual([
+        Float64Array.from([0]),
+        Float64Array.from([-1]),
+        Float64Array.from([0]),
+    ]);
+    expect(new Vector3(3, 1, [0, 1, 0]).cross(new Vector3(3, 1, [1, 0, 0])).toArray()).toEqual([
+        Float64Array.from([0]),
+        Float64Array.from([0]),
+        Float64Array.from([-1]),
     ]);
 });
 
@@ -152,4 +165,20 @@ test("Transform Vector correctly", () => {
     v.transformColumnMajorVector(transformMatrix2.invert());
     expect(v.vGet(0)).toBeCloseTo(1);
     expect(v.vGet(1)).toBeCloseTo(0);
+});
+
+test("Should perform triangle intersection correctly", () => {
+    const v0 = new Vector3(3, 1, [0, 0, -50]);
+    const v1 = new Vector3(3, 1, [0, 1, -50]);
+    const v2 = new Vector3(3, 1, [-1, 0, -50]);
+    const origin = new Vector3(3, 1, [0, 0, 0]);
+    const direction = new Vector3(3, 1, [
+        -0.39411127587967854, -0.39879378608814986, -0.8280337060784246
+    ]);
+    const A = v1.matSub(v0);
+    expect(A.toArray()).toEqual([Float64Array.from([0]), Float64Array.from([1]), Float64Array.from([0])]);
+    const B = v2.matSub(v0);
+    expect(B.toArray()).toEqual([Float64Array.from([-1]), Float64Array.from([0]), Float64Array.from([0])]);
+    const N = A.cross(B);
+    expect(N.toArray()).toEqual([Float64Array.from([0]), Float64Array.from([0]), Float64Array.from([1])]);
 });
